@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kopi Nusantara</title>
+  <link rel="stylesheet" href="kopi.css">
+</head>
+<body>
+
+  <nav>
+    <h2>☕ Kopi Nusantara</h2>
+    <button onclick="keProduk()">Lihat Produk</button>
+    <button onclick="keProduk()">Pembelian</button>
+  </nav>
+
+  <section class="hero">
+    <h1>Rasakan Nikmatnya Kopi Asli Indonesia</h1>
+    <p>Dari biji pilihan, rasa juara</p>
+    <button class="btn-utama" onclick="keProduk()">Beli Sekarang</button>
+  </section>
+
+  <section id="produk" class="produk">
+    <div class="card">
+      <h3>Kopi Arabika</h3>
+      <p>Aroma harum & asam seimbang</p>
+      <button onclick="beli('Kopi Arabika')">Beli</button>
+    </div>
+
+    <div class="card">
+      <h3>Kopi Robusta</h3>
+      <p>Rasa kuat & pahit mantap</p>
+      <button onclick="beli('Kopi Robusta')">Beli</button>
+    </div>
+
+    <div class="card">
+      <h3>Kopi Latte</h3>
+      <p>Perpaduan kopi & susu</p>
+      <button onclick="beli('Kopi Latte')">Beli</button>
+    </div>
+  </section>
+
+  <script src="kopi.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembayaran - Kopi Nusantara</title>
+  <link rel="stylesheet" href="kopi.css">
+  <style>
+   
+    .container-beli {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #5a3e2b;
+    }
+    
+    input[type="text"], 
+    input[type="number"], 
+    select, 
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .metode-pembayaran {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .metode-item {
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .metode-item:hover {
+      background: #fdf8f3;
+      border-color: #d4a373;
+    }
+
+    .metode-item input {
+      margin-right: 10px;
+    }
+
+    .btn-pesan {
+      width: 100%;
+      background: #5a3e2b;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .btn-pesan:hover {
+      background: #3e2723;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>☕ Kopi Nusantara</h2>
+    <a href="kopi.html" style="color: white; text-decoration: none;">Kembali ke Beranda</a>
+  </nav>
+
+  <div class="container-beli">
+    <h2 style="text-align: center; color: #5a3e2b;">Formulir Pembayaran</h2>
+    <hr>
+    
+    <form onsubmit="pesan(event)">
+      <div class="form-group">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
+      </div>
+
+      <div class="form-group">
+        <label for="kopi">Produk Pilihan</label>
+        <select id="kopi" disabled>
+          <option value="Kopi Arabika">Kopi Arabika</option>
+          <option value="Kopi Robusta">Kopi Robusta</option>
+          <option value="Kopi Liberika">Kopi Liberika</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="jenisBiji">Jenis Biji</label>
+        <select id="jenisBiji">
+          <option value="Giling Halus">Giling Halus (Bubuk)</option>
+          <option value="Gilinh Sedang">Giling sedang (Bubuk)</option>
+          <option value="Giling Kasar">Giling Kasar (Bubuk)</option>
+          <option value="Biji Utuh">Biji Utuh (Roasted Beans)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="jumlah">Jumlah (Pack)</label>
+        <input type="number" id="jumlah" min="1" value="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="alamat">Alamat Pengiriman</label>
+        <textarea id="alamat" rows="3" placeholder="Jl. Nama Jalan, No Rumah, Kota..." required></textarea>
+      </div>
+
+      <label>Metode Pembayaran</label>
+      <div class="metode-pembayaran">
+        <label class="metode-item">
+          <input type="radio" name="pay" value="QRIS" checked> QRIS
+        </label>
+        <label class="metode-item">
+          <input type="radio" name="pay" value="DANA"> DANA
+        </label>
+        <label class="metode-item">
+          <input type="radio" name="pay" value="GOPAY"> GoPay
+        </label>
+        <label class="metode-item">
+          <input type="radio" name="pay" value="COD"> Bayar di Tempat
+        </label>
+      </div>
+
+      <button type="submit" class="btn-pesan">Pesan Sekarang</button>
+    </form>
+  </div>
+
+  <script src="kopi.js"></script>
+</body>
+</html>
